@@ -1,0 +1,92 @@
+.modalBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.close {
+  margin-left: auto;
+  padding: 20px 0px;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+.image {
+  width: 550px;
+  height: 550px;
+  border-radius: 15px;
+}
+
+.box {
+  width: 550px;
+  margin: 60px auto;
+}
+
+.posRelative {
+  position: relative;
+}
+
+.prev {
+  position: absolute;
+  top: 250px;
+  left: -25px;
+  width: 55px;
+  height: 55px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.prev > img {
+  width: 12px;
+  height: 17px;
+  transform: translate(16px, 18px);
+}
+
+.next {
+  position: absolute;
+  top: 250px;
+  left: 525px;
+  width: 55px;
+  height: 55px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.next > img {
+  width: 12px;
+  height: 17px;
+  transform: translate(24px, 18px);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.flex > li {
+  width: 87px;
+  height: 87px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.flex > li img {
+  width: 88px;
+  height: 88px;
+  border-radius: 10px;
+}
+
+.flex > li img:hover {
+  cursor: pointer;
+  filter: opacity(50%);
+}
+
+
