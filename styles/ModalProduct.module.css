@@ -82,6 +82,7 @@
   width: 88px;
   height: 88px;
   border-radius: 10px;
+  transition: all 0.1s linear 0.1s;
 }
 
 .flex > li img:hover {

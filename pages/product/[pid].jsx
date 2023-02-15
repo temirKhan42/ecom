@@ -166,8 +166,8 @@ class Post extends React.Component {
               </div>
             </div>
           </div>
+          {this.state.isModalOpen ? <ModalProduct close={this.setModal} images={images} /> : null}
         </main>
-        {this.state.isModalOpen ? <ModalProduct close={this.setModal} images={images} /> : null}
       </MainImageContext.Provider>
     );
   }

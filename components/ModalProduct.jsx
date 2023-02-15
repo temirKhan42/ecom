@@ -26,8 +26,14 @@ function ModalProduct(props) {
     mainImage.setIndex(e, i);
   };
 
+  const handleBackgroundClick = (e) => {
+    if (e.target === e.currentTarget) {
+      close();
+    }
+  };
+
   return (
-    <div className={styles.modalBack}>
+    <div className={styles.modalBack} onClick={handleBackgroundClick} >
       <div className={container}>
 
         <img src="/icon-close.svg" alt="Close" className={styles.close} onClick={() => close()} />
