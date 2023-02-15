@@ -11,7 +11,7 @@ export default async (req, res) => {
       });
     } else {
       res.status(200).json({ 
-        measge: 'The quantity of the product you specified exceeds the allowable value', 
+        measage: 'The quantity of the product you specified exceeds the allowable value', 
         confirmed: false,
       })
     }

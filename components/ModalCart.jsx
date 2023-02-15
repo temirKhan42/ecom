@@ -7,6 +7,7 @@ function ModalCart() {
   const {  id, title, cost, amount } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [isCheckDisabled, setIsCheckDisabled] = useState(false);
+  const [errorMeasage, setErrorMeasage] = useState('');
 
   useEffect(async () => {
     if (amount > 0) {
@@ -21,6 +22,7 @@ function ModalCart() {
       const data = await response.json();
 
       setIsCheckDisabled(!data?.confirmed);
+      setErrorMeasage(data?.measage);
     }    
   }, [amount]);
 
@@ -52,6 +54,7 @@ function ModalCart() {
           <div>
             <button className='check-btn' disabled={isCheckDisabled} onClick={handleCheck}>Checkout</button>
           </div>
+          {isCheckDisabled ? <p className="error-measage">{errorMeasage}</p> : null}
         </div> :
         <div className="modal-cart-empty">
           <p>Your cart is empty</p>

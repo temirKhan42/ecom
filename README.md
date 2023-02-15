@@ -1,4 +1,7 @@
+The task was get from the [Frontend mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
 
 ## Getting Started
 

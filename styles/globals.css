@@ -329,3 +329,10 @@ nav li:hover {
 .remove-cart-btn:hover {
   cursor: pointer;
 }
+
+.error-measage {
+  margin: 10px 0;
+  font-size: 14px;
+  text-align: center;
+  color: hsl(0, 80%, 50%);
+}
