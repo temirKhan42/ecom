@@ -36,7 +36,7 @@ class Post extends React.Component {
     const data = await fetchData();
     this.setState({ data });
 
-    if (data.discount > 0) {
+    if (data.discount > 0 && new Date(data.discountDate) > new Date()) {
       this.timerId = setInterval(() => {
         const discountDate = new Date(data.discountDate);
         const currentDate = new Date();
@@ -97,7 +97,7 @@ class Post extends React.Component {
       '/image-product-4-thumbnail.jpg'
     ];
     
-    const { title, cost, price, discount } = this.state.data;
+    const { title, cost, price, discount, discountDate } = this.state.data;
 
     return (
       <MainImageContext.Provider value={{ 
@@ -138,7 +138,7 @@ class Post extends React.Component {
               <h1 className='h1'>{title}</h1>
               <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
               <div className='mb-2'>
-                {discount > 0 ? (
+                {discount > 0 && new Date(discountDate) > new Date() ? (
                   <>
                     <p className="mb-1">
                       <span className='cost'>${cost}</span>

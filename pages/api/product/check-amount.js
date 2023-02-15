@@ -2,7 +2,7 @@ export default async (req, res) => {
   const productAmount = Math.floor(Math.random() * 100);
 
   if (req.method === 'POST') {
-    const { amount } = req.body;
+    const { amount, id } = req.body;
     console.log(productAmount, amount);
     if (productAmount >= amount) {
       res.status(200).json({ 

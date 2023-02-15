@@ -4,7 +4,7 @@ import { removeData } from '../utils/slices/cartSlice.js';
 
 
 function ModalCart() {
-  const {  title, cost, amount } = useSelector((state) => state.cart);
+  const {  id, title, cost, amount } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [isCheckDisabled, setIsCheckDisabled] = useState(false);
 
@@ -15,12 +15,11 @@ function ModalCart() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ amount }),
+        body: JSON.stringify({ amount, id }),
       })
       
       const data = await response.json();
 
-      console.log(data);
       setIsCheckDisabled(!data?.confirmed);
     }    
   }, [amount]);
