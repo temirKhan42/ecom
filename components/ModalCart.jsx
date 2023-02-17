@@ -9,21 +9,24 @@ function ModalCart() {
   const [isCheckDisabled, setIsCheckDisabled] = useState(false);
   const [errorMeasage, setErrorMeasage] = useState('');
 
-  useEffect(async () => {
-    if (amount > 0) {
-      const response = await fetch('/api/product/check-amount', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ amount, id }),
-      })
-      
-      const data = await response.json();
+  useEffect(() => {
+    const fetchData = async () => {
+      if (amount > 0) {
+        const response = await fetch('/api/product/check-amount', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ amount, id }),
+        })
+        
+        const data = await response.json();
 
-      setIsCheckDisabled(!data?.confirmed);
-      setErrorMeasage(data?.measage);
-    }    
+        setIsCheckDisabled(!data?.confirmed);
+        setErrorMeasage(data?.measage);
+      }   
+    } 
+    fetchData();
   }, [amount]);
 
   const handleClearCart = (e) => {

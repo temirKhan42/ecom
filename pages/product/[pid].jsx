@@ -136,7 +136,7 @@ class Post extends React.Component {
             <div id="right" className="right">
               <span className='title'>sneaker company</span>
               <h1 className='h1'>{title}</h1>
-              <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+              <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they&apos;ll withstand everything the weather can offer.</p>
               <div className='mb-2'>
                 {discount > 0 && new Date(discountDate) > new Date() ? (
                   <>
